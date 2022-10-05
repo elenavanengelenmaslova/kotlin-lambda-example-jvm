@@ -16,12 +16,12 @@ repositories {
 }
 
 dependencies {
-    implementation("software.amazon.awssdk:dynamodb-enhanced:2.17.136")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+    implementation("software.amazon.awssdk:dynamodb-enhanced:2.17.276")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation("com.amazonaws:aws-lambda-java-core:1.2.1")
     implementation("com.amazonaws:aws-lambda-java-events:3.11.0")
-    implementation("org.slf4j:slf4j-api:1.7.36")
-    implementation("org.slf4j:slf4j-simple:1.7.36")
+    implementation("org.slf4j:slf4j-api:2.0.1")
+    implementation("org.slf4j:slf4j-simple:2.0.1")
 }
 
 configurations {
