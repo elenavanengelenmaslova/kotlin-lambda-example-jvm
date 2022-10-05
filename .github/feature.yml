@@ -1,0 +1,14 @@
+name: Kotlin Lambda JVM Example CI/CD
+on:
+  push:
+    branches: [ feature-* ]
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  call-workflow-build-deploy:
+    uses: ./.github/workflows/workflow-build-deploy.yml
+    secrets:
+      aws_account_id: ${{ secrets.AWS_ACCOUNT_ID }}
+      aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
+      aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}

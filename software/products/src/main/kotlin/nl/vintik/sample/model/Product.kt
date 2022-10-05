@@ -16,7 +16,7 @@ data class Product(
     constructor() : this("", "", 0.0F)
 
     companion object {
-        const val TABLE_NAME = "Products-GraalVM-Example"
+        const val TABLE_NAME = "Products-JVM-Example"
         val schema = TableSchema.builder(Product::class.java)
             .newItemSupplier { Product() }
             .addAttribute(
