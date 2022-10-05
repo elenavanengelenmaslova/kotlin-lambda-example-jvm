@@ -4,6 +4,7 @@ on:
     branches: [ feature-* ]
     paths-ignore:
       - '**.md'
+  workflow_dispatch:
 
 jobs:
   call-workflow-build-deploy:
