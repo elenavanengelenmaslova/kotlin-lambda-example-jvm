@@ -41,7 +41,7 @@ const stackJVMC1 = new InfrastructureJvmC1Stack(app, stackNameJVMC1, {
 });
 
 const stackNameJVMC1Arm64 = 'Kotlin-Lambda-JVM-C1-Arm64-example';
-const stackJVMC1Arm64 = new InfrastructureJvmC1Stack(app, stackNameJVMC1, {
+const stackJVMC1Arm64 = new InfrastructureJvmC1Stack(app, stackNameJVMC1Arm64, {
   stackName: stackNameJVMC1Arm64,
   env: environmentSettings,
   description: 'JVM C1 Arm64 example',
