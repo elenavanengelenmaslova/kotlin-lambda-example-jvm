@@ -4,7 +4,6 @@ import {App, Stack, Tags} from 'aws-cdk-lib';
 import {InfrastructureJvmStack} from '../lib/infrastructure-jvm-stack';
 import {InfrastructureJvmC1Stack} from "../lib/infrastructure-jvm-c1-stack";
 import {InfrastructureTableStack} from "../lib/infrastructure-table-stack";
-//import PermissionsBoundaryAspect from "../lib/permission-boundary-aspect";
 
 const app = new App();
 
@@ -47,12 +46,8 @@ const stackJVMC1Arm64 = new InfrastructureJvmC1Stack(app, stackNameJVMC1Arm64, {
   description: 'JVM C1 Arm64 example',
 });
 
-// const permissionBoundary = new PermissionsBoundaryAspect(
-//   `arn:aws:iam::${Aws.ACCOUNT_ID}:policy/xxx-base-permissions-boundary`
-// );
 for (const node of app.node.children) {
   if (node instanceof Stack) {
     Tags.of(node).add('Application ID', node.stackName);
-    //Aspects.of(node).add(permissionBoundary);
   }
 }
