@@ -26,11 +26,25 @@ const stackJVM = new InfrastructureJvmStack(app, stackNameJVM, {
   description: 'JVM example',
 });
 
+const stackNameJVMArm64 = 'Kotlin-Lambda-JVM-Arm64-example';
+const stackJVMArm64 = new InfrastructureJvmStack(app, stackNameJVMArm64, {
+  stackName: stackNameJVMArm64,
+  env: environmentSettings,
+  description: 'JVM Arm64 example',
+});
+
 const stackNameJVMC1 = 'Kotlin-Lambda-JVM-C1-example';
 const stackJVMC1 = new InfrastructureJvmC1Stack(app, stackNameJVMC1, {
   stackName: stackNameJVMC1,
   env: environmentSettings,
   description: 'JVM C1 example',
+});
+
+const stackNameJVMC1Arm64 = 'Kotlin-Lambda-JVM-C1-Arm64-example';
+const stackJVMC1Arm64 = new InfrastructureJvmC1Stack(app, stackNameJVMC1, {
+  stackName: stackNameJVMC1Arm64,
+  env: environmentSettings,
+  description: 'JVM C1 Arm64 example',
 });
 
 // const permissionBoundary = new PermissionsBoundaryAspect(
