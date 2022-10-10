@@ -4,6 +4,8 @@ import {App, Stack, Tags} from 'aws-cdk-lib';
 import {InfrastructureJvmStack} from '../lib/infrastructure-jvm-stack';
 import {InfrastructureJvmC1Stack} from "../lib/infrastructure-jvm-c1-stack";
 import {InfrastructureTableStack} from "../lib/infrastructure-table-stack";
+import {InfrastructureJvmC1Arm64Stack} from "../lib/infrastructure-jvm-c1-arm64-stack";
+import {InfrastructureJvmArm64Stack} from "../lib/infrastructure-jvm-arm64-stack";
 
 const app = new App();
 
@@ -26,7 +28,7 @@ const stackJVM = new InfrastructureJvmStack(app, stackNameJVM, {
 });
 
 const stackNameJVMArm64 = 'Kotlin-Lambda-JVM-Arm64-example';
-const stackJVMArm64 = new InfrastructureJvmStack(app, stackNameJVMArm64, {
+const stackJVMArm64 = new InfrastructureJvmArm64Stack(app, stackNameJVMArm64, {
   stackName: stackNameJVMArm64,
   env: environmentSettings,
   description: 'JVM Arm64 example',
@@ -40,7 +42,7 @@ const stackJVMC1 = new InfrastructureJvmC1Stack(app, stackNameJVMC1, {
 });
 
 const stackNameJVMC1Arm64 = 'Kotlin-Lambda-JVM-C1-Arm64-example';
-const stackJVMC1Arm64 = new InfrastructureJvmC1Stack(app, stackNameJVMC1Arm64, {
+const stackJVMC1Arm64 = new InfrastructureJvmC1Arm64Stack(app, stackNameJVMC1Arm64, {
   stackName: stackNameJVMC1Arm64,
   env: environmentSettings,
   description: 'JVM C1 Arm64 example',
