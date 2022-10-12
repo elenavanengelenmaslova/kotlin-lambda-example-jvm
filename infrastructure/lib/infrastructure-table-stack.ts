@@ -7,7 +7,9 @@ export class InfrastructureTableStack extends Stack {
 
         const tableName = 'Products-JVM-Example';
         const productsTable = new dynamodb.Table(this, id, {
-            billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+            billingMode: dynamodb.BillingMode.PROVISIONED,
+            writeCapacity: 8,
+            readCapacity: 8,
             removalPolicy: RemovalPolicy.DESTROY,
             partitionKey: {name: 'id', type: dynamodb.AttributeType.STRING},
             pointInTimeRecovery: false,
