@@ -56,7 +56,7 @@ class ProductsService {
             schema
         )
 
-        private const val parallelScanTotalSegments = 4
+        private const val parallelScanTotalSegments = 5
         private const val parallelScanPageSize = 25
 
     }
