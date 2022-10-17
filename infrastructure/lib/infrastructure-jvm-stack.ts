@@ -1,7 +1,7 @@
 import {
     aws_dynamodb as dynamodb,
     aws_lambda as lambda,
-    aws_logs as logs,
+    aws_logs as logs, CfnOutput,
     Duration,
     Fn,
     Stack,
@@ -25,5 +25,11 @@ export class InfrastructureJvmStack extends Stack {
         });
 
         productsTable.grantReadData(lambdaJvm);
+
+        new CfnOutput(this, `lambdaJvm-fn-arn`, {
+            value: lambdaJvm.functionArn,
+            description: `The arn of the lambdaJvm function`,
+            exportName: `lambdaJvmFnArn`,
+        });
     }
 }
