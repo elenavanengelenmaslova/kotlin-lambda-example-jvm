@@ -3,6 +3,8 @@ Kotlin Lambda example on JVM contains four CDK stacks of Kotlin Lambda on JVM: J
 
 ## Build & Deployment from local machine
 ### Build kotlin app
+Unit tests are using Testcontainers to run DynamoDB locally. 
+Ensure docker is running locally, then execute:
 ```
 ./gradlew clean build
 ```
