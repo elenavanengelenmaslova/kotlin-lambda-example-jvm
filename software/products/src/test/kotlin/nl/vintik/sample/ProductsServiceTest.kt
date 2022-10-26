@@ -44,7 +44,7 @@ internal class ProductsServiceTest {
 
         lateinit var productTable: DynamoDbAsyncTable<Product>
 
-        lateinit var dynamoDbEnhancedAsyncClient: DynamoDbEnhancedAsyncClient
+        private lateinit var dynamoDbEnhancedAsyncClient: DynamoDbEnhancedAsyncClient
 
         @BeforeAll
         @JvmStatic
