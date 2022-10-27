@@ -102,8 +102,6 @@ internal class ProductsServiceTest {
                 }.joinToString("")
 
             return randomString
-
         }
-
     }
 }

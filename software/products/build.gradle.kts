@@ -29,7 +29,6 @@ dependencies {
     testImplementation("org.mockito:mockito-junit-jupiter:4.8.0")
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
     testImplementation("org.testcontainers:junit-jupiter:1.17.4")
-    testImplementation("org.testcontainers:testcontainers:1.17.4")
 }
 
 configurations {
