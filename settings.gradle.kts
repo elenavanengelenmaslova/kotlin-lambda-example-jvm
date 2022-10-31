@@ -16,3 +16,5 @@ pluginManagement {
 }
 include(":products")
 project(":products").projectDir = file("software/products")
+include(":infrastructure")
+project(":infrastructure").projectDir = file("infrastructure")
