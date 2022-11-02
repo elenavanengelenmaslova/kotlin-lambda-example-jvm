@@ -82,8 +82,8 @@ jobs:
       - name: DEPLOY synthesize & deploy
         run: |
           cd ${GITHUB_WORKSPACE}/infrastructure
-          yarn
-          yarn cdk deploy -vv --require-approval never Kotlin-Lambda-JVM-table --exclusively
+          npm install -g aws-cdk
+          cdk deploy -vv --require-approval never Kotlin-Lambda-JVM-table --exclusively
 
   deploy-app:
     runs-on: ubuntu-latest
@@ -133,6 +133,5 @@ jobs:
       - name: DEPLOY synthesize & deploy
         run: |
           cd ${GITHUB_WORKSPACE}/infrastructure
-          npm install
-          npm run build
-          npx cdk deploy -vv --require-approval never ${{ matrix.config.stack-name }} --exclusively
+          npm install -g aws-cdk
+          cdk deploy -vv --require-approval never ${{ matrix.config.stack-name }} --exclusively

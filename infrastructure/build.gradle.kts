@@ -11,7 +11,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("nl.vintik.sample.infra.InfrastructureApp")
+    mainClass.set("nl.vintik.sample.infra.InfrastructureAppKt")
 }
 
 tasks.named("run") {
