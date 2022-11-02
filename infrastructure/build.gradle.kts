@@ -1,18 +1,6 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        dependencies {
-            classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20")
-        }
-    }
-}
 
 plugins {
-    kotlin("jvm")
-}
-
-repositories {
-    mavenCentral()
+    application
 }
 
 dependencies {
@@ -22,10 +10,10 @@ dependencies {
     implementation("software.constructs:constructs:10.1.138")
 }
 
-//application {
-//    mainClass.set("nl.vintik.sample.infra.InfrastructureAppKt")
-//}
+application {
+    mainClass.set("nl.vintik.sample.infra.InfrastructureApp")
+}
 
-//tasks.named("run") {
-//    dependsOn(":software:shadowJar")
-//}
+tasks.named("run") {
+    dependsOn(":products:packageDistribution")
+}

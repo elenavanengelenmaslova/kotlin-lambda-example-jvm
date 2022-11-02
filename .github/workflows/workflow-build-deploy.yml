@@ -82,9 +82,8 @@ jobs:
       - name: DEPLOY synthesize & deploy
         run: |
           cd ${GITHUB_WORKSPACE}/infrastructure
-          npm install
-          npm run build
-          npx cdk deploy -vv --require-approval never Kotlin-Lambda-JVM-table --exclusively
+          yarn
+          yarn cdk deploy -vv --require-approval never Kotlin-Lambda-JVM-table --exclusively
 
   deploy-app:
     runs-on: ubuntu-latest

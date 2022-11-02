@@ -1,4 +1,4 @@
-package nl.vintik.sample.cdk
+package nl.vintik.sample.infra
 
 import software.amazon.awscdk.App
 import software.amazon.awscdk.Environment
