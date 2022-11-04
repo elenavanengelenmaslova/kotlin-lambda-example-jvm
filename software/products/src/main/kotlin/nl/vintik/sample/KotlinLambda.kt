@@ -21,11 +21,10 @@ class KotlinLambda : RequestHandler<Map<String, String>, List<Product>> {
                 .overrideConfiguration(
                     ClientOverrideConfiguration.builder()
                         .addExecutionInterceptor(TracingInterceptor())
-                        .build())
+                        .build()
+                )
                 .build()
-        )
-
-        .build()
+        ).build()
 
     private val productTable = dynamoDbAsyncClient.table(
         Product.TABLE_NAME,
