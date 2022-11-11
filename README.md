@@ -10,26 +10,19 @@ Ensure docker is running locally, then execute:
 ```
 ### Set up CDK deployment
 
-Set up npm:
+Install CDK (if you have not already):
 ```
-cd ${GITHUB_WORKSPACE}/infrastructure
-npm install
-npm run build
+npm install -g aws-cdk
 ```
 
 If you have not set up CDK in you AWS account yet, please run (replace variables in brackets with actual values):
 ```
-npx cdk bootstrap aws://[aws_account_id]/[aws_region]
+cdk bootstrap aws://[aws_account_id]/[aws_region]
 ```
 
-Now deploy the Kotlin/JVM app:
+Now deploy the Kotlin/JVM & JVM C1 app:
 ```
-npx cdk deploy -vv --require-approval never Kotlin-Lambda-JVM-example
-```
-
-for JVM C1 example replace the above line with:
-```
-npx cdk deploy -vv --require-approval never Kotlin-Lambda-GraalVM-JVM-C1-example
+cdk deploy -vv --require-approval never --all
 ```
 
 ## Build & Deployment to AWS account from GitHub
