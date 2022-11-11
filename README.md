@@ -1,5 +1,5 @@
 # kotlin-lambda-example-jvm
-Kotlin Lambda example on JVM contains four CDK stacks of Kotlin Lambda on JVM: JVM on x86, JVM on Arm64, JVM with C1 compiler on x86, JVM with C1 compiler on Arm64,
+Kotlin Lambda example on JVM contains four CDK stacks of Kotlin Lambda on JVM: JVM on x86, JVM on Arm64, JVM with C1 compiler on x86, JVM with C1 compiler on Arm64,and one stack for Dynamo Table.
 
 ## Build & Deployment from local machine
 ### Build kotlin app
