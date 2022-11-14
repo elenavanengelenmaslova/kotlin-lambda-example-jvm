@@ -1,9 +1,6 @@
 package nl.vintik.sample.infra
 
-import software.amazon.awscdk.Duration
-import software.amazon.awscdk.Fn
-import software.amazon.awscdk.Stack
-import software.amazon.awscdk.StackProps
+import software.amazon.awscdk.*
 import software.amazon.awscdk.services.dynamodb.Table
 import software.amazon.awscdk.services.lambda.Architecture
 import software.amazon.awscdk.services.lambda.Code
@@ -15,6 +12,7 @@ import software.constructs.Construct
 class InfrastructureJvmArm64Stack(scope: Construct, id: String, props: StackProps) : Stack(scope, id, props) {
     init {
         val productsTable = Table.fromTableArn(this, "dynamoTable", Fn.importValue("Products-JVM-ExampleTableArn"))
+        val functionId = "lambdaJvmArm64"
         val function = Function.Builder.create(this, "lambdaJvmArm64")
             .description("Kotlin Lambda JVM ARM64 Example")
             .handler("nl.vintik.sample.KotlinLambda::handleRequest")
@@ -26,5 +24,13 @@ class InfrastructureJvmArm64Stack(scope: Construct, id: String, props: StackProp
             .timeout(Duration.seconds(120))
             .build()
         productsTable.grantReadData(function)
+
+        CfnOutput(
+            this, "${functionId}-fn-arn",
+            CfnOutputProps.builder()
+                .value(productsTable.tableArn)
+                .description("The arn of the $functionId function")
+                .exportName("${functionId}FnArn").build()
+        )
     }
 }
