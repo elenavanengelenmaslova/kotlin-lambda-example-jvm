@@ -13,7 +13,7 @@ class InfrastructureJvmArm64Stack(scope: Construct, id: String, props: StackProp
     init {
         val productsTable = Table.fromTableArn(this, "dynamoTable", Fn.importValue("Products-JVM-ExampleTableArn"))
         val functionId = "lambdaJvmArm64"
-        val function = Function.Builder.create(this, "lambdaJvmArm64")
+        val function = Function.Builder.create(this, functionId)
             .description("Kotlin Lambda JVM ARM64 Example")
             .handler("nl.vintik.sample.KotlinLambda::handleRequest")
             .runtime(Runtime.JAVA_11)
