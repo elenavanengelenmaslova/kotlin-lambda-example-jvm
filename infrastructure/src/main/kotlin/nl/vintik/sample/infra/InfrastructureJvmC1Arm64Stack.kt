@@ -33,7 +33,7 @@ class InfrastructureJvmC1Arm64Stack(scope: Construct, id: String, props: StackPr
         CfnOutput(
             this, "${functionId}-fn-arn",
             CfnOutputProps.builder()
-                .value(productsTable.tableArn)
+                .value(function.functionArn)
                 .description("The arn of the $functionId function")
                 .exportName("${functionId}FnArn").build()
         )
