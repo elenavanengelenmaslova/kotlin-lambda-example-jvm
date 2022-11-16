@@ -1,18 +1,13 @@
 package nl.vintik.sample
 
-import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
-import nl.vintik.sample.util.logger
 import nl.vintik.sample.model.Product
-import nl.vintik.sample.model.Product.Companion.schema
+import nl.vintik.sample.util.logger
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbAsyncTable
-import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedAsyncClient
 import software.amazon.awssdk.enhanced.dynamodb.model.ScanEnhancedRequest
-import software.amazon.awssdk.regions.Region
-import software.amazon.awssdk.services.dynamodb.DynamoDbAsyncClient
 import java.util.*
 
 class ProductsService(private val productTable: DynamoDbAsyncTable<Product>) {
