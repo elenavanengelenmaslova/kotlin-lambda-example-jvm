@@ -4,8 +4,8 @@ plugins {
 }
 
 dependencies {
-    implementation("software.amazon.awscdk:aws-cdk-lib:2.47.0")
-    implementation("software.constructs:constructs:10.1.138")
+    implementation("software.amazon.awscdk:aws-cdk-lib:2.53.0")
+    implementation("software.constructs:constructs:10.1.173")
 }
 
 application {
@@ -14,4 +14,7 @@ application {
 
 tasks.named("run") {
     dependsOn(":products:packageDistribution")
+}
+repositories {
+    mavenCentral()
 }
