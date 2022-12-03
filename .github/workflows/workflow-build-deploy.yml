@@ -108,6 +108,10 @@ jobs:
               component-name: "Kotlin Lambda JVM C1 Arm64",
               stack-name: "Kotlin-Lambda-JVM-C1-Arm64-example",
             },
+            {
+              component-name: "Kotlin Lambda JVM SnapStart",
+              stack-name: "Kotlin-Lambda-JVM-SnapStart-example",
+            },
           ]
     name: ${{ matrix.config.component-name }} deployment
 
