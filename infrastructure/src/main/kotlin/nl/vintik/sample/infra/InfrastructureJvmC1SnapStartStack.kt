@@ -10,14 +10,19 @@ import software.amazon.awscdk.services.lambda.Function
 import software.amazon.awscdk.services.logs.RetentionDays
 import software.constructs.Construct
 
-class InfrastructureJvmSnapStartStack(scope: Construct, id: String, props: StackProps) : Stack(scope, id, props) {
+class InfrastructureJvmC1SnapStartStack(scope: Construct, id: String, props: StackProps) : Stack(scope, id, props) {
     init {
         val productsTable = Table.fromTableArn(this, "dynamoTable", Fn.importValue("Products-JVM-ExampleTableArn"))
-        val function = Function.Builder.create(this, "lambdaJvmSnapStart")
-            .description("Kotlin Lambda JVM SnapStart Example")
+        val function = Function.Builder.create(this, "lambdaJvmC1SnapStart")
+            .description("Kotlin Lambda JVM C1 SnapStart Example")
             .handler("nl.vintik.sample.KotlinLambda::handleRequest")
             .runtime(Runtime.JAVA_11)
             .code(Code.fromAsset("../build/dist/function.zip"))
+            .environment(
+                mapOf(
+                    "JAVA_TOOL_OPTIONS" to "-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+                )
+            )
             .logRetention(RetentionDays.ONE_WEEK)
             .memorySize(512)
             .timeout(Duration.seconds(120))

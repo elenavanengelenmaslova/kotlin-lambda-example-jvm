@@ -72,5 +72,16 @@ fun main() {
             .description("JVM SnapStart example")
             .build()
     )
+
+    val stackNameJVMC1SnapStart = "Kotlin-Lambda-JVM-C1-SnapStart-example"
+    InfrastructureJvmSnapStartStack(
+        app,
+        stackNameJVMC1SnapStart,
+        StackProps.builder()
+            .stackName(stackNameJVMC1SnapStart)
+            .env(environment)
+            .description("JVM C1 SnapStart example")
+            .build()
+    )
     app.synth()
 }
