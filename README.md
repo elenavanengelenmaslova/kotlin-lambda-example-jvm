@@ -1,5 +1,5 @@
 # kotlin-lambda-example-jvm
-Kotlin Lambda example on JVM contains four CDK stacks of Kotlin Lambda on JVM: JVM on x86, JVM on Arm64, JVM with C1 compiler on x86, JVM with C1 compiler on Arm64,and one stack for Dynamo Table.
+Kotlin Lambda example on JVM contains six CDK stacks of Kotlin Lambda on JVM: JVM on x86, JVM on Arm64, JVM with C1 compiler on x86, JVM with C1 compiler on Arm64, JVM with SnapStart on x86, JVM with SnapStart and C1 compiler on x86, and one stack for Dynamo Table.
 
 ## Build & Deployment from local machine
 ### Build kotlin app
@@ -20,7 +20,7 @@ If you have not set up CDK in you AWS account yet, please run (replace variables
 cdk bootstrap aws://[aws_account_id]/[aws_region]
 ```
 
-Now deploy the Kotlin/JVM & JVM C1 app:
+Now deploy all stacks:
 ```
 cdk deploy -vv --require-approval never --all
 ```
