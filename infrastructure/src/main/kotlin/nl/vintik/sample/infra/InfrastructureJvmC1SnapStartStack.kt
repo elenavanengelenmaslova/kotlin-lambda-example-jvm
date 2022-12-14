@@ -20,7 +20,10 @@ class InfrastructureJvmC1SnapStartStack(scope: Construct, id: String, props: Sta
             .code(Code.fromAsset("../build/dist/function.zip"))
             .environment(
                 mapOf(
-                    "JAVA_TOOL_OPTIONS" to "-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+                    // Stop after C1 compilation
+                    "JAVA_TOOL_OPTIONS" to "-XX:+TieredCompilation -XX:TieredStopAtLevel=1",
+                    // Ensure lambda version is updated with latest lambda code
+                    "CodeVersionString" to System.getenv("BUILD_NO"),
                 )
             )
             .logRetention(RetentionDays.ONE_WEEK)
@@ -33,7 +36,7 @@ class InfrastructureJvmC1SnapStartStack(scope: Construct, id: String, props: Sta
             CfnFunction.SnapStartProperty.builder().applyOn("PublishedVersions").build()
         )
         // publish a version
-        Version(this, "SnapStartVersion") { function }
+        function.currentVersion
 
         productsTable.grantReadData(function)
     }

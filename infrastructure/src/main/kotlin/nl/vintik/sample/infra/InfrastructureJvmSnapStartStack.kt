@@ -18,6 +18,12 @@ class InfrastructureJvmSnapStartStack(scope: Construct, id: String, props: Stack
             .handler("nl.vintik.sample.KotlinLambda::handleRequest")
             .runtime(Runtime.JAVA_11)
             .code(Code.fromAsset("../build/dist/function.zip"))
+            .environment(
+                mapOf(
+                    // Ensure lambda version is updated with latest lambda code
+                    "CodeVersionString" to System.getenv("BUILD_NO"),
+                )
+            )
             .logRetention(RetentionDays.ONE_WEEK)
             .memorySize(512)
             .timeout(Duration.seconds(120))
@@ -28,7 +34,7 @@ class InfrastructureJvmSnapStartStack(scope: Construct, id: String, props: Stack
             CfnFunction.SnapStartProperty.builder().applyOn("PublishedVersions").build()
         )
         // publish a version
-        Version(this, "SnapStartVersion") { function }
+        function.currentVersion
 
         productsTable.grantReadData(function)
     }

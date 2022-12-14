@@ -19,6 +19,7 @@ env:
   # Supply target AWS account here
   DEPLOY_TARGET_ACCOUNT: ${{ secrets.aws_account_id }}
   DEPLOY_TARGET_REGION: ${{ inputs.aws_region }}
+  BUILD_NO: ${{ github.run_number }}
 
 jobs:
   build:
