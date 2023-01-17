@@ -1,5 +1,5 @@
 # kotlin-lambda-example-jvm
-Kotlin Lambda example on JVM contains six CDK stacks of Kotlin Lambda on JVM: JVM on x86, JVM on Arm64, JVM with C1 compiler on x86, JVM with C1 compiler on Arm64, JVM with SnapStart on x86, JVM with SnapStart and C1 compiler on x86, and one stack for Dynamo Table.
+Kotlin Lambda example on JVM contains six CDK stacks of Kotlin Lambda on JVM: JVM on x86, JVM on Arm64, JVM with C1 compiler on x86, JVM with C1 compiler on Arm64, JVM with SnapStart on x86, JVM with SnapStart and C1 compiler on x86, and one stack for Dynamo Table. x86 and ARM64 examples were used in performance tests for "To ARM64 or not to ARM64" article: https://medium.com/aws-tip/this-week-in-kotlin-on-aws-lambda-to-arm64-or-not-to-arm64-e970f97baef3
 
 ## Build & Deployment from local machine
 ### Build kotlin app
