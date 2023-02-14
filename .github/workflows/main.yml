@@ -1,4 +1,4 @@
-name: Kotlin Lambda JVM Example CI/CD
+name: Kotlin Lambda JVM Example CI/CD Main
 on:
   push:
     branches: [ main ]
