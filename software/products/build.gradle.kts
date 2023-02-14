@@ -1,8 +1,8 @@
 
 dependencies {
-    implementation("software.amazon.awssdk:dynamodb-enhanced:2.18.1")
+    implementation("software.amazon.awssdk:dynamodb-enhanced:2.20.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-    implementation("com.amazonaws:aws-lambda-java-core:1.2.1")
+    implementation("com.amazonaws:aws-lambda-java-core:1.2.2")
     implementation("com.amazonaws:aws-lambda-java-events:3.11.0")
    // implementation("com.amazonaws:aws-xray-recorder-sdk-aws-sdk-v2:2.12.0")
     implementation("org.slf4j:slf4j-api:2.0.3")
