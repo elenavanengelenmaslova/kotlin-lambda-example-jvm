@@ -4,8 +4,8 @@ plugins {
 }
 
 dependencies {
-    implementation("software.amazon.awscdk:aws-cdk-lib:2.64.0")
-    implementation("software.constructs:constructs:10.1.248")
+    implementation("software.amazon.awscdk:aws-cdk-lib:2.69.0")
+    implementation("software.constructs:constructs:10.1.280")
 }
 
 application {
