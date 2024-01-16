@@ -1,19 +1,23 @@
 
 dependencies {
-    implementation("software.amazon.awssdk:dynamodb-enhanced:2.20.26")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("software.amazon.awssdk:dynamodb-enhanced:2.20.68")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
     implementation("com.amazonaws:aws-lambda-java-core:1.2.2")
     implementation("com.amazonaws:aws-lambda-java-events:3.11.1")
    // implementation("com.amazonaws:aws-xray-recorder-sdk-aws-sdk-v2:2.12.0")
     implementation("org.slf4j:slf4j-api:2.0.5")
     implementation("org.slf4j:slf4j-simple:2.0.5")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.5.31")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.2")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.2")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:4.1.0")
-    testImplementation("org.mockito:mockito-junit-jupiter:5.2.0")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
-    testImplementation("org.testcontainers:junit-jupiter:1.17.6")
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test-junit5
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.9.22")
+    // https://mvnrepository.com/artifact/org.mockito.kotlin/mockito-kotlin
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
+    // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
+    testImplementation("org.mockito:mockito-junit-jupiter:5.9.0")
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
+    // https://mvnrepository.com/artifact/org.testcontainers/junit-jupiter
+    testImplementation("org.testcontainers:junit-jupiter:1.19.3")
+
 }
 
 configurations {
