@@ -17,7 +17,7 @@ class InfrastructureJvmStack(scope: Construct, id: String, props: StackProps) : 
         val function = Function.Builder.create(this, "lambdaJvm")
             .description("Kotlin Lambda JVM Example")
             .handler("nl.vintik.sample.KotlinLambda::handleRequest")
-            .runtime(Runtime.JAVA_11)
+            .runtime(Runtime.JAVA_21)
             .code(Code.fromAsset("../build/dist/function.zip"))
             .logRetention(RetentionDays.ONE_WEEK)
             .memorySize(512)

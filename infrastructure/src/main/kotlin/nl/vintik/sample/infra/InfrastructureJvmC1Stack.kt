@@ -17,7 +17,7 @@ class InfrastructureJvmC1Stack(scope: Construct, id: String, props: StackProps) 
         val function = Function.Builder.create(this, "lambdaJvmC1")
             .description("Kotlin Lambda JVM C1 Example")
             .handler("nl.vintik.sample.KotlinLambda::handleRequest")
-            .runtime(Runtime.JAVA_11)
+            .runtime(Runtime.JAVA_21)
             .code(Code.fromAsset("../build/dist/function.zip"))
             .environment(
                 mapOf(

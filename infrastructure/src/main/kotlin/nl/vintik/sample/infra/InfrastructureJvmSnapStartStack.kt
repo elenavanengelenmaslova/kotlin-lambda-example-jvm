@@ -16,7 +16,7 @@ class InfrastructureJvmSnapStartStack(scope: Construct, id: String, props: Stack
         val function = Function.Builder.create(this, "lambdaJvmSnapStart")
             .description("Kotlin Lambda JVM SnapStart Example")
             .handler("nl.vintik.sample.KotlinLambda::handleRequest")
-            .runtime(Runtime.JAVA_11)
+            .runtime(Runtime.JAVA_21)
             .code(Code.fromAsset("../build/dist/function.zip"))
             .logRetention(RetentionDays.ONE_WEEK)
             .memorySize(512)
