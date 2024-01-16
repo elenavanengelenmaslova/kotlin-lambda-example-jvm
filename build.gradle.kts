@@ -27,6 +27,11 @@ allprojects {
             setExceptionFormat("full")
         }
     }
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(21))
+        }
+    }
     tasks.withType<KotlinCompile> {
         kotlinOptions.jvmTarget = "21"
     }
