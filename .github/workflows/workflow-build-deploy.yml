@@ -62,10 +62,10 @@ jobs:
     name: Table deploy
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "14"
+          node-version: "18"
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
@@ -120,7 +120,7 @@ jobs:
     name: ${{ matrix.config.component-name }} deployment
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Download Artifacts
         uses: actions/download-artifact@v2
@@ -128,9 +128,9 @@ jobs:
           name: LambdaArtifacts
           path: build/dist/
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
-          node-version: "14"
+          node-version: "18"
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
