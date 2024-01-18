@@ -16,7 +16,7 @@ class InfrastructureJvmC1Arm64Stack(scope: Construct, id: String, props: StackPr
         val function = Function.Builder.create(this, functionId)
             .description("Kotlin Lambda JVM C1 ARM64 Example")
             .handler("nl.vintik.sample.KotlinLambda::handleRequest")
-            .runtime(Runtime.JAVA_11)
+            .runtime(Runtime.JAVA_21)
             .code(Code.fromAsset("../build/dist/function.zip"))
             .architecture(Architecture.ARM_64)
             .environment(

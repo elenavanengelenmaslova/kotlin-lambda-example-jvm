@@ -16,7 +16,7 @@ class InfrastructureJvmArm64Stack(scope: Construct, id: String, props: StackProp
         val function = Function.Builder.create(this, functionId)
             .description("Kotlin Lambda JVM ARM64 Example")
             .handler("nl.vintik.sample.KotlinLambda::handleRequest")
-            .runtime(Runtime.JAVA_11)
+            .runtime(Runtime.JAVA_21)
             .code(Code.fromAsset("../build/dist/function.zip"))
             .architecture(Architecture.ARM_64)
             .logRetention(RetentionDays.ONE_WEEK)
